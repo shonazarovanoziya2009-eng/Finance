@@ -10,14 +10,12 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <!-- Main Menu Button -->
     <button class="menu-toggle" aria-label="Открыть меню">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Dropdown Menu -->
     <nav class="main-menu" id="mainMenu">
       <div class="menu-section">
         <h3>Поиск выгодных финансовых продуктов</h3>
@@ -34,7 +32,6 @@
       </div>
     </nav>
 
-    <!-- Inline SVG Logo -->
     <svg class="logo" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
       <rect width="160" height="40" fill="white"/>
       <text x="20" y="28" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0D6EFD">FinanceOne</text>
@@ -68,6 +65,21 @@
       <div class="slider-wrapper">
         <input type="range" id="rate" min="0" max="30" step="0.1" value="15">
         <span class="value" id="rate-value">15%</span>
+      </div>
+    </div>
+
+    <!-- Search Button -->
+    <button id="searchBtn" class="search-btn">Искать</button>
+
+    <!-- Checkbox for new microloans -->
+    <div class="new-offers-checkbox">
+      <label>
+        <input type="checkbox" id="newOffersCheckbox">
+        <span class="checkmark"></span>
+        Новые микрозаймы
+      </label>
+      <div id="newOffersInfo" class="new-offers-info hidden">
+        Здесь будут отображаться новые предложения, появившиеся за последнее время.
       </div>
     </div>
   </section>
