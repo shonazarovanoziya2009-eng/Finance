@@ -1,4 +1,3 @@
-// Microloan data with logo placeholders (replace letter with <img src="..."> if needed)
 const PRODUCTS = [
   { 
     name: "Займер", 
@@ -47,8 +46,8 @@ const PRODUCTS = [
   },
   { 
     name: "До Зарплаты", 
-    desc: "Займ до 30 000 ₽. Получите деньги за 15 минут.",     amount: 30000, 
-    term: "5–30 дней", 
+    desc: "Займ до 30 000 ₽. Получите деньги за 15 минут.", 
+    amount: 30000,     term: "5–30 дней", 
     rate: "1.5%/день", 
     link: "#",
     logo: "Z"
@@ -73,7 +72,6 @@ const PRODUCTS = [
   }
 ];
 
-// DOM elements
 const productsContainer = document.getElementById('products');
 const amountSlider = document.getElementById('amount');
 const termSlider = document.getElementById('term');
@@ -83,8 +81,11 @@ const termValue = document.getElementById('term-value');
 const rateValue = document.getElementById('rate-value');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainMenu = document.getElementById('mainMenu');
+const searchBtn = document.getElementById('searchBtn');
+const newOffersCheckbox = document.getElementById('newOffersCheckbox');
+const newOffersInfo = document.getElementById('newOffersInfo');
 
-// Format numbers with spaces
+// Format numbers
 function formatNum(n) {
   return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
@@ -95,8 +96,8 @@ amountSlider.addEventListener('input', () => {
 });
 termSlider.addEventListener('input', () => {
   termValue.textContent = `${termSlider.value} дн.`;
-});
-rateSlider.addEventListener('input', () => {  rateValue.textContent = `${parseFloat(rateSlider.value).toFixed(1)}%`;
+});rateSlider.addEventListener('input', () => {
+  rateValue.textContent = `${parseFloat(rateSlider.value).toFixed(1)}%`;
 });
 
 // Toggle mobile menu
@@ -104,7 +105,23 @@ menuToggle.addEventListener('click', () => {
   mainMenu.classList.toggle('active');
 });
 
-// Render product cards
+// Toggle new offers info
+newOffersCheckbox.addEventListener('change', () => {
+  if (newOffersCheckbox.checked) {
+    newOffersInfo.classList.remove('hidden');
+  } else {
+    newOffersInfo.classList.add('hidden');
+  }
+});
+
+// Search button functionality
+searchBtn.addEventListener('click', () => {
+  // In a real app, this would filter based on selected values
+  alert('Поиск выполнен! Показаны предложения по выбранным параметрам.');
+  // You can add actual filtering logic here
+});
+
+// Render products
 function renderProducts() {
   productsContainer.innerHTML = PRODUCTS.map(item => `
     <div class="product-card">
