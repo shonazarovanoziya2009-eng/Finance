@@ -107,7 +107,7 @@ body {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 6rem 2rem 2rem; /* Reduced bottom padding to fix gap */
+  padding: 6rem 2rem 2rem;
   margin-top: 0;
 }
 
@@ -136,7 +136,7 @@ body {
   max-width: 1200px;
   box-shadow: var(--shadow);
   border-radius: 12px;
-  margin-top: -1rem; /* Fixes the small gap */
+  margin-top: -1rem;
 }
 
 .filter-item {
@@ -275,6 +275,9 @@ body {
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card:hover {
@@ -289,10 +292,10 @@ body {
   align-items: center;
   gap: 1rem;
 }
-
 .product-logo {
   width: 40px;
-  height: 40px;  background: #f0f5ff;
+  height: 40px;
+  background: #f0f5ff;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -314,12 +317,23 @@ body {
 }
 
 .product-card-body {
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card-body p {
   color: var(--gray);
   margin-bottom: 1rem;
+  flex: 1;
+  /* Ensure consistent height for description */
+  min-height: 60px;
+}
+
+.product-card-footer {
+  padding: 0 1.5rem 1.5rem;
+  margin-top: auto;
 }
 
 .btn {
@@ -327,8 +341,7 @@ body {
   width: 100%;
   padding: 0.8rem;
   background: var(--primary);
-  color: white;
-  text-align: center;
+  color: white;  text-align: center;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
@@ -341,7 +354,8 @@ body {
 
 /* Footer */
 .footer {
-  background: white;  padding: 2rem;
+  background: white;
+  padding: 2rem;
   text-align: center;
   color: var(--gray);
   font-size: 0.9rem;
@@ -376,8 +390,7 @@ body {
     left: 0;
     width: 100%;
     background: var(--primary);
-    padding: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 1.5rem;    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     flex-direction: column;
     gap: 1.5rem;
     display: none;
@@ -390,7 +403,8 @@ body {
   .menu-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;  }
+    gap: 0.8rem;
+  }
   
   .hero {
     padding: 5rem 1.5rem 1.5rem;
@@ -425,7 +439,6 @@ body {
     min-width: 140px;
   }
 }
-
 @media (max-width: 480px) {
   .logo {
     height: 36px;
@@ -439,7 +452,8 @@ body {
     font-size: 1rem;
   }
   
-  .products {    grid-template-columns: repeat(2, 1fr);
+  .products {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 0 1rem 1.5rem;
   }
@@ -447,4 +461,4 @@ body {
   .footer {
     padding: 1.5rem;
   }
-  }
+    }
