@@ -465,7 +465,7 @@ body {
   .logo-container {
   display: flex;
   align-items: center;
-  gap: 0.4rem; /* ← уменьшено до 0.4rem для близости к тексту */
+  gap: 0.4rem;
 }
 
 .logo-text {
@@ -474,5 +474,4 @@ body {
   font-weight: 700;
   color: white;
   margin: 0;
-  line-height: 1;
 }
