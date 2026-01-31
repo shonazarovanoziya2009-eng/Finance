@@ -462,3 +462,15 @@ body {
     padding: 1.5rem;
   }
     }
+  .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
